@@ -11,6 +11,7 @@ def batches(batch_size, features, labels):
     :param labels: List of labels
     :return: Batches of (Features, Labels)
     """
+    print("[batches]")
     assert len(features) == len(labels)
     outout_batches = []
 
@@ -25,6 +26,7 @@ def print_epoch_stats(epoch_i, sess, last_features, last_labels):
     """
     Print cost and validation accuracy of an epoch
     """
+    print("[print_epoch_stats]")
     current_cost = sess.run(
         cost,
         feed_dict={features: last_features, labels: last_labels})
@@ -41,7 +43,7 @@ n_classes = 10  # MNIST total classes (0-9 digits)
 
 # Import MNIST data
 mnist = input_data.read_data_sets('/datasets/ud730/mnist', one_hot=True)
-
+print()
 # The features are already scaled and the data is shuffled
 train_features = mnist.train.images
 valid_features = mnist.validation.images

@@ -25,6 +25,7 @@ def mnist_features_labels(n_labels):
     return mnist_features, mnist_labels
 
 
+print ("Aziz Here")
 # Number of features (28*28 image is 784 features)
 n_features = 784
 # Number of labels
@@ -36,9 +37,9 @@ labels = tf.placeholder(tf.float32)
 
 # Weights and Biases
 w = tf.Variable(tf.truncated_normal((n_features, n_labels)))
-
+print ("w >>",w)
 b = tf.Variable(tf.zeros(n_labels))
-
+print ("b >>",b)
 # Linear Function xW + b
 logits = tf.add(tf.matmul(features, w), b)
 
