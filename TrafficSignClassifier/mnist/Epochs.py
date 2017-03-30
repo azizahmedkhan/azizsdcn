@@ -26,7 +26,6 @@ def print_epoch_stats(epoch_i, sess, last_features, last_labels):
     """
     Print cost and validation accuracy of an epoch
     """
-    print("[print_epoch_stats]")
     current_cost = sess.run(
         cost,
         feed_dict={features: last_features, labels: last_labels})
@@ -76,8 +75,8 @@ accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 init = tf.global_variables_initializer()
 
 batch_size = 128
-epochs = 240
-learn_rate = 0.0001
+epochs = 80
+learn_rate = 0.001
 
 train_batches = batches(batch_size, train_features, train_labels)
 
